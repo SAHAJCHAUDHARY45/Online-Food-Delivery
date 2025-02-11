@@ -9,15 +9,38 @@ body {
     background-color: #f8f8f8;
 }
 
+.hero-container {
+    background-image: url('../Img/bg.jpg'); /* Add your combined image path here */
+    background-size: cover;
+    background-position: center;
+    color: white;
+    top: 0;
+    z-index: 1000;
+    text-decoration: solid  ;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+    z-index: 1;
+}
+
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 20px;
-    background-color: #ff5a00;
+    padding: 20px 30px;
+    background: rgba(0, 0, 0, 0.3); /* More transparent background */
     color: white;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
 }
-
 .logo {
     font-size: 24px;
     font-weight: bold;
@@ -79,9 +102,10 @@ body {
 
 .hero {
     text-align: center;
-    padding: 50px 20px;
-    background: #ff5a00;
+    padding: 120px 20px 60px; /* Adjust padding to account for fixed navbar */
     color: white;
+    text-decoration: solid;
+    background: rgba(0, 0, 0, 0.3);
 }
 .hero input, .hero button {
     padding: 10px;
@@ -103,49 +127,32 @@ body {
     padding: 40px 20px;
     text-align: center;
 }
-.slider-container {
-    width: 80%;
-    margin: auto;
-    overflow: hidden;
-    position: relative;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
 }
-.food-items {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-}
+
 .food-card {
     background: #fff;
     color: #ff5a00;
     padding: 15px;
     border-radius: 10px;
     text-align: center;
-    min-width: 300px;
-    margin: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
 }
+
+.food-card:hover {
+    transform: scale(1.05);
+}
+
 .food-card img {
     width: 100%;
     border-radius: 10px;
 }
-.slider-buttons {
-    position: absolute;
-    top: 50%;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    transform: translateY(-50%);
-}
-.slider-buttons button {
-    background: rgba(255, 90, 0, 0.8);
-    color: white;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-    border-radius: 5px;
-    font-size: 18px;
-}
+
 footer {
     text-align: center;
     background: #ff5a00;
