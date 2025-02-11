@@ -77,6 +77,51 @@ body {
     }
 }
 
+.hero {
+    text-align: center;
+    padding: 50px 20px;
+    background: #ff5a00;
+    color: white;
+}
+.hero input, .hero button {
+    padding: 10px;
+    margin-top: 10px;
+    border: none;
+    font-size: 16px;
+}
+.hero input {
+    width: 250px;
+    border-radius: 5px;
+}
+.hero button {
+    background: white;
+    color: #ff5a00;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.featured, #how-it-works, #testimonials {
+    padding: 40px 20px;
+    text-align: center;
+}
+.food-items {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+.food-card {
+    background: #ff5a00;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    font-size: 18px;
+}
+footer {
+    background: #ff5a00;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
+
 /* Menu Section */
 
 .attention-text {
