@@ -25,17 +25,25 @@
     <section id="home" class="hero">
         <h1>Delicious Food, Delivered Fast!</h1>
         <p>Order your favorite meals from the best restaurants near you.</p>
-        <input type="text" placeholder="Search for food...">
-        <button>Search</button>
+        <input type="text" id="search" placeholder="Search for food...">
+        <button onclick="searchFood()">Search</button>
     </section>
     
     <section id="menu" class="featured">
         <h2>Popular Dishes</h2>
-        <div class="food-items">
-            <div class="food-card">Pizza</div>
-            <div class="food-card">Burger</div>
-            <div class="food-card">Sushi</div>
-            <div class="food-card">Pasta</div>
+        <div class="slider-container">
+            <div class="food-items" id="food-slider">
+                <div class="food-card"><img src="pizza.jpg" alt="Pizza"><p>Pizza</p></div>
+                <div class="food-card"><img src="cheese burger.jpg" alt="Burger"><p>Burger</p></div>
+                <div class="food-card"><img src="samosa.jpg" alt="Samosa"><p>Samosa</p></div>
+                <div class="food-card"><img src="lassi.jpg" alt="Pakoda"><p>lassi</p></div>
+                <div class="food-card"><img src="dessert.jpg" alt="Salad"><p>Chocolate Lava Cake</p></div>
+                <div class="food-card"><img src="thepla.jpg" alt="Thepla"><p>Thepla</p></div>
+            </div>
+            <div class="slider-buttons">
+                <button id="prev-button">&#10094;</button>
+                <button id="next-button">&#10095;</button>
+            </div>
         </div>
     </section>
     

@@ -39,3 +39,28 @@ function removeItem(index) {
 }
 
 updateCart();
+
+function searchFood() {
+    let searchValue = document.getElementById('search').value;
+    if (searchValue) {
+        alert('Searching for: ' + searchValue);
+    } else {
+        alert('Please enter a food item to search.');
+    }
+}
+
+let index = 0;
+function nextSlide() {
+    const slider = document.getElementById('food-slider');
+    index = (index + 1) % 6;
+    slider.style.transform = `translateX(-${index * 16.66}%)`;
+}
+function prevSlide() {
+    const slider = document.getElementById('food-slider');
+    index = (index - 1 + 6) % 6;
+    slider.style.transform = `translateX(-${index * 16.66}%)`;
+}
+
+// Add event listeners for slider buttons
+document.getElementById('next-button').addEventListener('click', nextSlide);
+document.getElementById('prev-button').addEventListener('click', prevSlide);
