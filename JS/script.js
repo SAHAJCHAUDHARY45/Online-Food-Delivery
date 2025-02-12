@@ -64,3 +64,48 @@ function prevSlide() {
 // Add event listeners for slider buttons
 document.getElementById('next-button').addEventListener('click', nextSlide);
 document.getElementById('prev-button').addEventListener('click', prevSlide);
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Handle the login form submission
+    const loginForm = document.querySelector('.login-form form');
+    if (loginForm) {
+        loginForm.addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the default form submission
+
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            // Basic validation
+            if (email === '' || password === '') {
+                alert('Please fill in all fields.');
+                return;
+            }
+
+            // Simulate form submission
+            alert('Login successful!');
+            // You can add your form submission logic here (e.g., AJAX request)
+        });
+    }
+
+    // Handle the contact form submission
+    const contactForm = document.querySelector('.contact-form form');
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the default form submission
+
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+
+            // Basic validation
+            if (name === '' || email === '' || message === '') {
+                alert('Please fill in all fields.');
+                return;
+            }
+
+            // Simulate form submission
+            alert('Message sent successfully!');
+            // You can add your form submission logic here (e.g., AJAX request)
+        });
+    }
+});
