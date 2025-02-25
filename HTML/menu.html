@@ -3,84 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menu | TastyGo</title>
+    <title>TastyBites - Fast Food Delivery Service</title>
     <link rel="stylesheet" href="../CSS/style.css">
-
 </head>
 <body>
     <nav class="navbar">
-        <div class="logo">🍔 TastyGo</div>
+        <div class="logo">
+            <a href="index.html">TastyBites</a>
+        </div>
         <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
-            <li><a href="menu.html" class="active">Menu</a></li>
-            <li><a href="cart.html">Cart 🛒 <span id="cart-count">0</span></a></li>
-            <li><a href="track.html">Track Order</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="restaurants.html">Restaurants</a></li>
+            <li><a href="about.html">About Us</a></li>
             <li><a href="contact.html">Contact</a></li>
-            <li><a href="login.html" class="login-btn">Login</a></li>
         </ul>
-        <div class="menu-toggle">&#9776;</div>
+        <div class="nav-buttons">
+            <a href="cart.html" class="cart-btn">
+                <i class="fas fa-shopping-cart"></i> Cart
+            </a>
+            <a href="login.html" class="login-btn">Login</a>
+            <a href="signup.html" class="signup-btn">Sign Up</a>
+        </div> 
     </nav>
-    
-    <section class="menu">
-        <h1 class="attention-text">"Craving something delicious? 🍔🍕<br> Order now and let <span class="tastygo-text">TastyGo</span> bring the feast to your doorstep!"</h1>
-        <div class="menu-container">
-            <div class="menu-item">
-                <img src="../Img/cheese burger.jpg" alt="Burger">
-                <h3>Cheese Burger</h3>
-                <p>$5.99</p>
-                <button class="add-to-cart">Add to Cart</button>
-            </div>
-            <div class="menu-item">
-                <img src="../Img/pizza.jpg" alt="Pizza">
-                <h3>Margherita Pizza</h3>
-                <p>$8.99</p>
-                <button class="add-to-cart">Add to Cart</button>
-            </div>
-            <div class="menu-item">
-                <img src="../Img/dabeli.jpg" alt="Dabeli">
-                <h3>Dabeli</h3>
-                <p>$7.99</p>
-                <button class="add-to-cart">Add to Cart</button>
-            </div>
-            <div class="menu-item">
-                <img src="../Img/lassi.jpg" alt="Lassi">
-                <h3>Lassi</h3>
-                <p>$12.99</p>
-                <button class="add-to-cart">Add to Cart</button>
-            </div>
-            <div class="menu-item">
-                <img src="../Img/thepla.jpg" alt="Thepla">
-                <h3>Thepla</h3>
-                <p>$6.49</p>
-                <button class="add-to-cart">Add to Cart</button>
-            </div>
-            <div class="menu-item">
-                <img src="../Img/Des.jpeg" alt="Dessert">
-                <h3>Chocolate Lava Cake</h3>
-                <p>$4.99</p>
-                <button class="add-to-cart">Add to Cart</button>
-            </div>
-            <div class="menu-item">
-                <img src="../Img/pakoda.jpg" alt="Pakoda">
-                <h3>Pakoda</h3>
-                <p>$4.99</p>
-                <button class="add-to-cart">Add to Cart</button>
-            </div>
-            <div class="menu-item">
-                <img src="../Img/chhole.jpg" alt="Chhole">
-                <h3>Chhole Bhature</h3>
-                <p>$4.99</p>
-                <button class="add-to-cart">Add to Cart</button>
-            </div>
-            <div class="menu-item">
-                <img src="../Img/samosa.jpg" alt="Samosa">
-                <h3>Samosa</h3>
-                <p>$4.99</p>
-                <button class="add-to-cart">Add to Cart</button>
-            </div>
-        </div>
-    </section>
 
-    <script src="../JS/script.js"></script>
+    <div class="menu-nav">
+        <div class="menu-categories">
+            <a href="#starters" class="menu-category active">
+                <div class="category-image">
+                    <img src="..\Img/Starters.jpeg" alt="Starters">
+                </div>
+                <span class="category-name">Starters</span>
+            </a>
+    
+            <a href="#main-course" class="menu-category">
+                <div class="category-image">
+                    <img src="..\Img/main-course.jpeg" alt="Main Course">
+                </div>
+                <span class="category-name">Main Course</span>
+            </a>
+    
+            <a href="#desserts" class="menu-category">
+                <div class="category-image">
+                    <img src="..\Img/Des.jpeg" alt="Desserts">
+                </div>
+                <span class="category-name">Desserts</span>
+            </a>
+    
+            <a href="#beverages" class="menu-category">
+                <div class="category-image">
+                    <img src="..\Img\Beverages.jpg" alt="Beverages">
+                </div>
+                <span class="category-name">Beverages</span>
+            </a>
+    
+            <a href="#specials" class="menu-category">
+                <div class="category-image">
+                    <img src="..\Img/Special.jpg" alt="Specials">
+                </div>
+                <span class="category-name">Specials</span>
+            </a>
+        </div>
+    </div>
 </body>
 </html>

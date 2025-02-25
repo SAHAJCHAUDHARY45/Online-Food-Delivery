@@ -1,86 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TastyGo</title>
+    <title>TastyBites - Fast Food Delivery Service</title>
     <link rel="stylesheet" href="../CSS/style.css">
 </head>
-
 <body>
-
-
-    <div class="hero-container">
-        <nav class="navbar">
-            <div class="logo">🍔 TastyGo</div>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="menu.html">Menu</a></li>
-                <li><a href="offers.html">Offers</a></li>
-                <li><a href="cart.html">Cart 🛒 <span id="cart-count">0</span></a></li>
-                <li><a href="track.html">Track Order</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="login.html" class="login-btn">Login</a></li>
-            </ul>
-            <div class="menu-toggle">&#9776;</div>
-        </nav>
-
-        <section id="home" class="hero">
-            <h1>Delicious Food, Delivered Fast!</h1>
-            <p>Order your favorite meals from the best restaurants near you.</p>
-            <input type="text" id="search" placeholder="Search for food...">
-            <button onclick="searchFood()">Search</button>
-        </section>
-    </div>
-
-
-
-    <section id="menu" class="featured">
-        <h2>Must-Try Culinary Delights</h2>
-        <div class="card-container">
-            <div class="food-card"><img src="../Img/pizza.jpg" alt="Pizza">
-                <p>Pizza</p>
-            </div>
-            <div class="food-card"><img src="../Img/cheese burger.jpg" alt="Burger">
-                <p>Burger</p>
-            </div>
-            <div class="food-card"><img src="../Img/samosa.jpg" alt="Samosa">
-                <p>Samosa</p>
-            </div>
-            <div class="food-card"><img src="../Img/lassi.jpg" alt="Lassi">
-                <p>Lassi</p>
-            </div>
-            <div class="food-card"><img src="../Img/Des.jpeg" alt="Dessert">
-                <p>Chocolate Lava Cake</p>
-            </div>
-            <div class="food-card"><img src="../Img/thepla.jpg" alt="Thepla">
-                <p>Thepla</p>
-            </div>
-            <div class="food-card"><img src="../Img/dabeli.jpg" alt="Dabeli">
-                <p>Dabeli</p>
-            </div>
-            <div class="food-card"><img src="../Img/chhole.jpg" alt="Chhole">
-                <p>Chhole</p>
-            </div>
+    <nav class="navbar">
+        <div class="logo">
+            <a href="index.html">TastyBites</a>
         </div>
-    </section>
-
-    <section id="how-it-works">
-        <h2>How It Works</h2>
-        <p>Choose your food, place an order, and enjoy delicious meals delivered to your doorstep!</p>
-    </section>
-
-    <section id="testimonials">
-        <h2>Customer Reviews</h2>
-        <p>"Amazing service! Food was hot and fresh!" - John Doe</p>
-    </section>
-
-    <footer>
-        <p>&copy; 2025 TastyGo. All rights reserved.</p>
-    </footer>
-
-    <script src="../JS/script.js"></script>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="restaurants.html">Restaurants</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="nav-buttons">
+            <a href="cart.html" class="cart-btn">
+                <i class="fas fa-shopping-cart"></i> Cart
+            </a>
+            <a href="login.html" class="login-btn">Login</a>
+            <a href="signup.html" class="signup-btn">Sign Up</a>
+        </div>
+    </nav> 
+    <div class="hero-section">
+        <div class="hero-content">
+            <h1>Welcome to TastyBites</h1>
+            <p>Delicious food delivered to your doorstep</p>
+            <a href="menu.html" class="order-btn">Order Now</a>
+        </div>
+    </div>
 </body>
-
 </html>
