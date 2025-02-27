@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TastyBites - Your Cart</title>
+    <link rel="stylesheet" href="../CSS/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <a href="index.html">TastyBites</a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="restaurants.html">Restaurants</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="nav-buttons">
+            <a href="cart.html" class="cart-btn active">
+                <i class="fas fa-shopping-cart"></i> Cart
+            </a>
+            <a href="login.html" class="login-btn">Login</a>
+            <a href="signup.html" class="signup-btn">Sign Up</a>
+        </div>
+    </nav>
+
+    <div class="cart-container">
+        <div class="cart-header">
+            <h1>Your Cart</h1>
+            <p>Review your items before checkout</p>
+        </div>
+
+        <div class="cart-content">
+            <div class="cart-items">
+                <!-- Sample Cart Item -->
+                <div class="cart-item">
+                    <div class="item-image">
+                        <img src="../Img/pizza.jpg" alt="Margherita Pizza">
+                    </div>
+                    <div class="item-details">
+                        <h3>Margherita Pizza</h3>
+                        <p class="restaurant">From: Italian Delight</p>
+                        <p class="price">$14.99</p>
+                    </div>
+                    <div class="item-quantity">
+                        <button class="quantity-btn minus">-</button>
+                        <input type="number" value="1" min="1" max="10">
+                        <button class="quantity-btn plus">+</button>
+                    </div>
+                    <div class="item-total">
+                        <p>$14.99</p>
+                    </div>
+                    <button class="remove-item">
+                        <i class="fas fa-trash"></i>
+                    </button>
+                </div>
+
+                <!-- Another Cart Item -->
+                <div class="cart-item">
+                    <div class="item-image">
+                        <img src="../Img/pasta.jpg" alt="Pasta Alfredo">
+                    </div>
+                    <div class="item-details">
+                        <h3>Pasta Alfredo</h3>
+                        <p class="restaurant">From: Italian Delight</p>
+                        <p class="price">$12.99</p>
+                    </div>
+                    <div class="item-quantity">
+                        <button class="quantity-btn minus">-</button>
+                        <input type="number" value="1" min="1" max="10">
+                        <button class="quantity-btn plus">+</button>
+                    </div>
+                    <div class="item-total">
+                        <p>$12.99</p>
+                    </div>
+                    <button class="remove-item">
+                        <i class="fas fa-trash"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="cart-summary">
+                <h2>Order Summary</h2>
+                <div class="summary-item">
+                    <span>Subtotal</span>
+                    <span>$27.98</span>
+                </div>
+                <div class="summary-item">
+                    <span>Delivery Fee</span>
+                    <span>$2.99</span>
+                </div>
+                <div class="summary-item">
+                    <span>Tax</span>
+                    <span>$2.48</span>
+                </div>
+                <div class="promo-code">
+                    <input type="text" placeholder="Enter promo code">
+                    <button>Apply</button>
+                </div>
+                <div class="summary-total">
+                    <span>Total</span>
+                    <span>$33.45</span>
+                </div>
+                <button class="checkout-btn">
+                    Proceed to Checkout
+                </button>
+                <div class="continue-shopping">
+                    <a href="restaurants.html">
+                        <i class="fas fa-arrow-left"></i> Continue Shopping
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>About TastyBites</h4>
+                <p>Your favorite food delivery partner</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="terms.html">Terms & Conditions</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact Us</h4>
+                <p>Email: info@tastybites.com</p>
+                <p>Phone: (555) 123-4567</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 TastyBites. All rights reserved.</p>
+        </div>
+    </footer>   
+    <script src="../JS/script.js"></script>
+</body>
+</html> 

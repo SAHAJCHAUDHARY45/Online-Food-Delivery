@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TastyBites - Partner Restaurants</title>
+    <link rel="stylesheet" href="../CSS/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <a href="index.html">TastyBites</a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="restaurants.html">Restaurants</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="nav-buttons">
+            <a href="cart.html" class="cart-btn">
+                <i class="fas fa-shopping-cart"></i> Cart
+            </a>
+            <a href="login.html" class="login-btn">Login</a>
+            <a href="signup.html" class="signup-btn">Sign Up</a>
+        </div>
+    </nav>
+
+    <div class="restaurants-header">
+        <h1>Our Partner Restaurants</h1>
+        <p>Discover the finest restaurants in your area</p>
+    </div>
+
+    <div class="restaurant-filters">
+        <select class="cuisine-filter">
+            <option value="">All Cuisines</option>
+            <option value="italian">Italian</option>
+            <option value="chinese">Chinese</option>
+            <option value="indian">Indian</option>
+            <option value="mexican">Mexican</option>
+        </select>
+        <select class="rating-filter">
+            <option value="">Rating</option>
+            <option value="4">4+ Stars</option>
+            <option value="3">3+ Stars</option>
+        </select>
+        <input type="text" placeholder="Search restaurants..." class="search-restaurant">
+    </div>
+
+    <div class="restaurants-grid">
+        <!-- Restaurant Card 1 -->
+        <div class="restaurant-card">
+            <div class="restaurant-image">
+                <img src="../Img/restaurant1.jpg" alt="Italian Delight">
+                <span class="rating">4.5 ★</span>
+            </div>
+            <div class="restaurant-info">
+                <h3>Italian Delight</h3>
+                <p class="cuisine">Italian • Pizza • Pasta</p>
+                <p class="delivery-info">30-45 min • Free delivery over $30</p>
+                <div class="restaurant-tags">
+                    <span>Vegetarian</span>
+                    <span>Family-friendly</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Restaurant Card 2 -->
+        <div class="restaurant-card">
+            <div class="restaurant-image">
+                <img src="../Img/restaurant2.jpg" alt="Dragon Wok">
+                <span class="rating">4.3 ★</span>
+            </div>
+            <div class="restaurant-info">
+                <h3>Dragon Wok</h3>
+                <p class="cuisine">Chinese • Asian • Noodles</p>
+                <p class="delivery-info">25-40 min • Free delivery over $25</p>
+                <div class="restaurant-tags">
+                    <span>Spicy</span>
+                    <span>Popular</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Restaurant Card 3 -->
+        <div class="restaurant-card">
+            <div class="restaurant-image">
+                <img src="../Img/restaurant3.jpg" alt="Taco Fiesta">
+                <span class="rating">4.7 ★</span>
+            </div>
+            <div class="restaurant-info">
+                <h3>Taco Fiesta</h3>
+                <p class="cuisine">Mexican • Tacos • Burritos</p>
+                <p class="delivery-info">20-35 min • Free delivery over $20</p>
+                <div class="restaurant-tags">
+                    <span>Authentic</span>
+                    <span>Quick delivery</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Add more restaurant cards as needed -->
+    </div>
+
+    <div class="load-more">
+        <button class="load-more-btn">Load More Restaurants</button>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>About TastyBites</h4>
+                <p>Your favorite food delivery partner</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="terms.html">Terms & Conditions</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact Us</h4>
+                <p>Email: info@tastybites.com</p>
+                <p>Phone: (555) 123-4567</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 TastyBites. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="../JS/script.js"></script>
+</body>
+</html> 
