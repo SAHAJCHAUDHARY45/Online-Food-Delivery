@@ -5,6 +5,266 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TastyBites - Fast Food Delivery Service</title>
     <link rel="stylesheet" href="../CSS/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        /* General Styles */
+:root {
+    --primary-color: #4CAF50;
+    --secondary-color: #45a049;
+    --accent-color: #ff4444;
+    --text-color: #333;
+    --light-gray: #f5f5f5;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+}
+
+/* Navbar Styles */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background: white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+/* Search Container */
+.search-container {
+    display: flex;
+    align-items: center;
+    margin-right: 1rem;
+}
+
+.search-input {
+    padding: 8px 15px;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    width: 200px;
+    transition: width 0.3s;
+}
+
+.search-input:focus {
+    width: 250px;
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+/* Hero Section Styles */
+.hero-section {
+    position: relative;
+    height: 80vh;
+    overflow: hidden;
+}
+
+.hero-slider {
+    height: 100%;
+    position: relative;
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+/* Quick Order Section */
+.quick-order {
+    background: white;
+    padding: 2rem;
+    margin-top: -50px;
+    position: relative;
+    z-index: 2;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.location-time {
+    display: flex;
+    gap: 2rem;
+    margin-top: 1rem;
+}
+
+/* Featured Items */
+.featured-items {
+    padding: 4rem 2rem;
+    background: var(--light-gray);
+}
+
+.featured-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.featured-item {
+    position: relative;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s;
+}
+
+.featured-item:hover {
+    transform: translateY(-10px);
+}
+
+.badge {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: var(--accent-color);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 15px;
+}
+
+/* Special Offers */
+.special-offers {
+    padding: 4rem 2rem;
+}
+
+.offers-container {
+    display: flex;
+    gap: 2rem;
+    overflow-x: auto;
+    padding: 1rem 0;
+}
+
+.offer-card {
+    flex: 0 0 300px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+.offer-card:hover {
+    transform: translateY(-10px);
+}
+
+/* App Download Section */
+.app-download {
+    background: var(--primary-color);
+    color: white;
+    padding: 4rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.app-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.app-btn {
+    background: white;
+    color: var(--text-color);
+    padding: 10px 20px;
+    border-radius: 25px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Newsletter Section */
+.newsletter {
+    background: var(--light-gray);
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+.newsletter-form {
+    max-width: 500px;
+    margin: 2rem auto;
+    display: flex;
+    gap: 1rem;
+}
+
+/* Animations */
+@keyframes slideIn {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.animate-in {
+    animation: slideIn 0.5s ease-out forwards;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        padding: 1rem;
+    }
+
+    .nav-links {
+        margin: 1rem 0;
+    }
+
+    .location-time {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .app-download {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .newsletter-form {
+        flex-direction: column;
+    }
+}
+    </style>
 </head>
 <body>
     <nav class="navbar">
@@ -12,28 +272,88 @@
             <a href="index.html">TastyBites</a>
         </div>
         <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html" class="active">Home</a></li>
             <li><a href="menu.html">Menu</a></li>
             <li><a href="restaurants.html">Restaurants</a></li>
             <li><a href="about.html">About Us</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
         <div class="nav-buttons">
+            <div class="search-container">
+                <input type="text" placeholder="Search food..." class="search-input">
+                <button class="search-btn"><i class="fas fa-search"></i></button>
+            </div>
             <a href="cart.html" class="cart-btn">
                 <i class="fas fa-shopping-cart"></i> Cart
+                <span class="cart-count">0</span>
             </a>
             <a href="login.html" class="login-btn">Login</a>
             <a href="signup.html" class="signup-btn">Sign Up</a>
         </div>
     </nav> 
+
+    <!-- Hero Section with Slider -->
     <div class="hero-section">
-        <div class="hero-content">
-            <h1>Welcome to TastyBites</h1>
-            <p>Delicious food delivered to your doorstep</p>
-            <a href="menu.html" class="order-btn">Order Now</a>
+        <div class="hero-slider">
+            <div class="slide active">
+                <img src="../Img/hero1.jpg" alt="Special Offer">
+                <div class="hero-content">
+                    <h1>Welcome to TastyBites</h1>
+                    <p>Delicious food delivered to your doorstep</p>
+                    <a href="menu.html" class="order-btn">Order Now</a>
+                </div>
+            </div>
+            <div class="slide">
+                <img src="../Img/hero2.jpg" alt="New Items">
+                <div class="hero-content">
+                    <h1>Special Offers</h1>
+                    <p>Get 20% off on your first order</p>
+                    <a href="menu.html" class="order-btn">View Offers</a>
+                </div>
+            </div>
+            <div class="slide">
+                <img src="../Img/hero3.jpg" alt="Delivery">
+                <div class="hero-content">
+                    <h1>Fast Delivery</h1>
+                    <p>30 minutes or free</p>
+                    <a href="menu.html" class="order-btn">Learn More</a>
+                </div>
+            </div>
+            <div class="slider-controls">
+                <button class="prev-slide"><i class="fas fa-chevron-left"></i></button>
+                <div class="slider-dots"></div>
+                <button class="next-slide"><i class="fas fa-chevron-right"></i></button>
+            </div>
         </div>
     </div>
+
+    <!-- Quick Order Section -->
+    <div class="quick-order">
+        <h2>Quick Order</h2>
+        <div class="location-time">
+            <div class="location-selector">
+                <i class="fas fa-map-marker-alt"></i>
+                <select id="deliveryLocation">
+                    <option value="">Select your location</option>
+                    <option value="downtown">Downtown</option>
+                    <option value="suburb">Suburb</option>
+                    <option value="uptown">Uptown</option>
+                </select>
+            </div>
+            <div class="delivery-time">
+                <i class="far fa-clock"></i>
+                <select id="deliveryTime">
+                    <option value="">Delivery Time</option>
+                    <option value="asap">As soon as possible</option>
+                    <option value="scheduled">Schedule for later</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <!-- Popular Categories -->
     <div class="menu-nav">
+        <h2>Popular Categories</h2>
         <div class="menu-categories">
             <a href="#starters" class="menu-category ">
                 <div class="category-image">
@@ -133,7 +453,76 @@
                 <span class="category-name">Specials</span>
             </a>
         </div>
+        <div class="category-nav">
+            <button class="nav-btn prev"><i class="fas fa-chevron-left"></i></button>
+            <button class="nav-btn next"><i class="fas fa-chevron-right"></i></button>
+        </div>
     </div>
+
+    <!-- Featured Items -->
+    <section class="featured-items">
+        <h2>Featured Items</h2>
+        <div class="featured-grid">
+            <div class="featured-item">
+                <div class="badge">New</div>
+                <img src="../Img/featured1.jpg" alt="Featured 1">
+                <h3>Special Pizza</h3>
+                <p>From $12.99</p>
+                <button class="order-now">Order Now</button>
+            </div>
+            <!-- Add more featured items -->
+        </div>
+    </section>
+
+    <!-- Special Offers -->
+    <section class="special-offers">
+        <h2>Special Offers</h2>
+        <div class="offers-container">
+            <div class="offer-card">
+                <img src="../Img/offer1.jpg" alt="Special Offer">
+                <div class="offer-content">
+                    <h3>50% OFF</h3>
+                    <p>On your first order</p>
+                    <div class="countdown" data-expires="2024-12-31">Ends in: 00:00:00</div>
+                    <button class="claim-btn">Claim Offer</button>
+                </div>
+            </div>
+            <!-- Add more offer cards -->
+        </div>
+    </section>
+
+    <!-- App Download Section -->
+    <section class="app-download">
+        <div class="app-content">
+            <h2>Download Our App</h2>
+            <p>Get exclusive offers and faster delivery</p>
+            <div class="app-buttons">
+                <a href="#" class="app-btn">
+                    <i class="fab fa-google-play"></i>
+                    Get it on Play Store
+                </a>
+                <a href="#" class="app-btn">
+                    <i class="fab fa-apple"></i>
+                    Download on App Store
+                </a>
+            </div>
+        </div>
+        <div class="app-image">
+            <img src="../Img/app-mockup.png" alt="Mobile App">
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter">
+        <div class="newsletter-content">
+            <h2>Subscribe to Our Newsletter</h2>
+            <p>Get updates about new dishes and upcoming offers</p>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Enter your email" required>
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+    </section>
 
     <footer class="footer">
         <div class="footer-content">
@@ -161,6 +550,5 @@
     </footer>
     
     <script src="../JS/script.js"></script>
-    
 </body>
 </html>
