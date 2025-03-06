@@ -1,288 +1,386 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TastyBites - Fast Food Delivery Service</title>
-    <link rel="stylesheet" href="../CSS/style.css">
+    <title>TastyBites - Food Delivery Service</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
-        /* General Styles */
-:root {
-    --primary-color: #4CAF50;
-    --secondary-color: #45a049;
-    --accent-color: #ff4444;
-    --text-color: #333;
-    --light-gray: #f5f5f5;
-}
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+        :root {
+            --primary-color: #ff4757;
+            --secondary-color: #ff4757;
+            --accent-color: #ff4444;
+            --text-dark: #333;
+            --text-light: #666;
+            --white: #ffffff;
+        }
 
-body {
-    font-family: 'Arial', sans-serif;
-    line-height: 1.6;
-}
+        body {
+            line-height: 1.6;
+            color: var(--text-dark);
+        }
 
-/* Navbar Styles */
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 2rem;
-    background: white;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
+        /* Navbar Styles */
+        .navbar {
+            background: var(--white);
+            padding: 1rem 5%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-/* Search Container */
-.search-container {
-    display: flex;
-    align-items: center;
-    margin-right: 1rem;
-}
+        .logo a {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: bold;
+        }
 
-.search-input {
-    padding: 8px 15px;
-    border: 1px solid #ddd;
-    border-radius: 20px;
-    width: 200px;
-    transition: width 0.3s;
-}
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
 
-.search-input:focus {
-    width: 250px;
-    outline: none;
-    border-color: var(--primary-color);
-}
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
 
-/* Hero Section Styles */
-.hero-section {
-    position: relative;
-    height: 80vh;
-    overflow: hidden;
-}
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
 
-.hero-slider {
-    height: 100%;
-    position: relative;
-}
+        .nav-buttons {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
 
-.slide {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    transition: opacity 0.5s ease-in-out;
-}
+        .nav-buttons a {
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            transition: all 0.3s;
+        }
 
-.slide.active {
-    opacity: 1;
-}
+        .cart-btn {
+            background: var(--primary-color);
+            color: var(--white);
+        }
 
-.slide img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
+        .login-btn {
+            border: 1px solid var(--primary-color);
+            color: var(--primary-color);
+        }
 
-.hero-content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    color: white;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-}
+        .signup-btn {
+            background: var(--primary-color);
+            color: var(--white);
+        }
 
-/* Quick Order Section */
-.quick-order {
-    background: white;
-    padding: 2rem;
-    margin-top: -50px;
-    position: relative;
-    z-index: 2;
-    max-width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-}
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+                url('../Img/bg.jpg') center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+            padding: 0 5%;
+        }
 
-.location-time {
-    display: flex;
-    gap: 2rem;
-    margin-top: 1rem;
-}
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            animation: fadeInUp 1s ease;
+        }
 
-/* Featured Items */
-.featured-items {
-    padding: 4rem 2rem;
-    background: var(--light-gray);
-}
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            animation: fadeInUp 1s ease 0.2s;
+            opacity: 0;
+            animation-fill-mode: forwards;
+        }
 
-.featured-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-    margin-top: 2rem;
-}
+        .cta-btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: var(--primary-color);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 25px;
+            transition: transform 0.3s;
+            animation: fadeInUp 1s ease 0.4s;
+            opacity: 0;
+            animation-fill-mode: forwards;
+        }
 
-.featured-item {
-    position: relative;
-    background: white;
-    border-radius: 10px;
-    overflow: hidden;
-    transition: transform 0.3s;
-}
+        .cta-btn:hover {
+            transform: translateY(-3px);
+        }
 
-.featured-item:hover {
-    transform: translateY(-10px);
-}
+        /* Features Section */
+        .features {
+            padding: 5rem 5%;
+            background: #f9f9f9;
+        }
 
-.badge {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    background: var(--accent-color);
-    color: white;
-    padding: 5px 10px;
-    border-radius: 15px;
-}
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
 
-/* Special Offers */
-.special-offers {
-    padding: 4rem 2rem;
-}
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
 
-.offers-container {
-    display: flex;
-    gap: 2rem;
-    overflow-x: auto;
-    padding: 1rem 0;
-}
+        .feature-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
 
-.offer-card {
-    flex: 0 0 300px;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    transition: transform 0.3s;
-}
+        .feature-card:hover {
+            transform: translateY(-10px);
+        }
 
-.offer-card:hover {
-    transform: translateY(-10px);
-}
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
 
-/* App Download Section */
-.app-download {
-    background: var(--primary-color);
-    color: white;
-    padding: 4rem 2rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
+        /* Popular Items Section */
+        .popular-items {
+            padding: 5rem 5%;
+        }
 
-.app-buttons {
-    display: flex;
-    gap: 1rem;
-    margin-top: 2rem;
-}
+        .items-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
 
-.app-btn {
-    background: white;
-    color: var(--text-color);
-    padding: 10px 20px;
-    border-radius: 25px;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
+        .item-card {
+            height: 500px;
+            background: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
 
-/* Newsletter Section */
-.newsletter {
-    background: var(--light-gray);
-    padding: 4rem 2rem;
-    text-align: center;
-}
+        .item-card:hover {
+            transform: translateY(-10px);
+        }
 
-.newsletter-form {
-    max-width: 500px;
-    margin: 2rem auto;
-    display: flex;
-    gap: 1rem;
-}
+        .item-image {
+            height: 200px;
+            overflow: hidden;
+        }
 
-/* Animations */
-@keyframes slideIn {
-    from {
-        transform: translateY(50px);
-        opacity: 0;
-    }
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
+        .item-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
 
-.animate-in {
-    animation: slideIn 0.5s ease-out forwards;
-}
+        .item-card:hover .item-image img {
+            transform: scale(1.1);
+        }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    .navbar {
-        flex-direction: column;
-        padding: 1rem;
-    }
+        .item-info {
+            padding: 1.5rem;
+        }
 
-    .nav-links {
-        margin: 1rem 0;
-    }
+        .item-title {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
 
-    .location-time {
-        flex-direction: column;
-        gap: 1rem;
-    }
+        .item-price {
+            color: var(--primary-color);
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
 
-    .app-download {
-        flex-direction: column;
-        text-align: center;
-    }
+        .order-btn {
+            display: block;
+            width: 100%;
+            padding: 0.8rem;
+            background: var(--primary-color);
+            color: var(--white);
+            text-align: center;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 1rem;
+            transition: background 0.3s;
+        }
 
-    .newsletter-form {
-        flex-direction: column;
-    }
-}
+        .order-btn:hover {
+            background: var(--secondary-color);
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 1rem;
+                flex-direction: column;
+            }
+
+            .nav-links {
+                margin: 1rem 0;
+                flex-direction: column;
+                text-align: center;
+                gap: 1rem;
+            }
+
+            .nav-buttons {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .features-grid,
+            .items-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Footer Styles */
+        .footer {
+            background: #333;
+            color: #fff;
+            padding: 40px 0 20px;
+            margin-top: 50px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            padding: 0 20px;
+        }
+
+        .footer-section h4 {
+            color: #fff;
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-section a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .footer-section a:hover {
+            color: #ff4757;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            margin-top: 40px;
+            border-top: 1px solid #555;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .restaurant-filters {
+                flex-direction: column;
+                padding: 15px;
+            }
+
+            .search-restaurant {
+                min-width: auto;
+                width: 100%;
+            }
+
+            .restaurants-grid {
+                grid-template-columns: 1fr;
+                padding: 15px;
+            }
+
+            .restaurants-header h1 {
+                font-size: 2rem;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
     </style>
 </head>
+
 <body>
+    <!-- Navigation Bar -->
     <nav class="navbar">
         <div class="logo">
             <a href="index.html">TastyBites</a>
         </div>
         <ul class="nav-links">
-            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="index.html">Home</a></li>
             <li><a href="menu.html">Menu</a></li>
             <li><a href="restaurants.html">Restaurants</a></li>
             <li><a href="about.html">About Us</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
         <div class="nav-buttons">
-            <div class="search-container">
-                <input type="text" placeholder="Search food..." class="search-input">
-                <button class="search-btn"><i class="fas fa-search"></i></button>
-            </div>
             <a href="cart.html" class="cart-btn">
                 <i class="fas fa-shopping-cart"></i> Cart
                 <span class="cart-count">0</span>
@@ -290,237 +388,176 @@ body {
             <a href="login.html" class="login-btn">Login</a>
             <a href="signup.html" class="signup-btn">Sign Up</a>
         </div>
-    </nav> 
+    </nav>
 
-    <!-- Hero Section with Slider -->
-    <div class="hero-section">
-        <div class="hero-slider">
-            <div class="slide active">
-                <img src="../Img/hero1.jpg" alt="Special Offer">
-                <div class="hero-content">
-                    <h1>Welcome to TastyBites</h1>
-                    <p>Delicious food delivered to your doorstep</p>
-                    <a href="menu.html" class="order-btn">Order Now</a>
-                </div>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Delicious Food Delivered</h1>
+            <p>Order your favorite meals from the best restaurants in town</p>
+            <a href="menu.html" class="cta-btn">Order Now</a>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <h2 class="section-title">Why Choose Us</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <i class="fas fa-truck feature-icon"></i>
+                <h3>Fast Delivery</h3>
+                <p>Quick and reliable delivery to your doorstep</p>
             </div>
-            <div class="slide">
-                <img src="../Img/hero2.jpg" alt="New Items">
-                <div class="hero-content">
-                    <h1>Special Offers</h1>
-                    <p>Get 20% off on your first order</p>
-                    <a href="menu.html" class="order-btn">View Offers</a>
-                </div>
+            <div class="feature-card">
+                <i class="fas fa-utensils feature-icon"></i>
+                <h3>Quality Food</h3>
+                <p>Fresh and delicious meals from top restaurants</p>
             </div>
-            <div class="slide">
-                <img src="../Img/hero3.jpg" alt="Delivery">
-                <div class="hero-content">
-                    <h1>Fast Delivery</h1>
-                    <p>30 minutes or free</p>
-                    <a href="menu.html" class="order-btn">Learn More</a>
-                </div>
-            </div>
-            <div class="slider-controls">
-                <button class="prev-slide"><i class="fas fa-chevron-left"></i></button>
-                <div class="slider-dots"></div>
-                <button class="next-slide"><i class="fas fa-chevron-right"></i></button>
+            <div class="feature-card">
+                <i class="fas fa-mobile-alt feature-icon"></i>
+                <h3>Easy Ordering</h3>
+                <p>Simple and convenient ordering process</p>
             </div>
         </div>
-    </div>
+    </section>
 
-    <!-- Quick Order Section -->
-    <div class="quick-order">
-        <h2>Quick Order</h2>
-        <div class="location-time">
-            <div class="location-selector">
-                <i class="fas fa-map-marker-alt"></i>
-                <select id="deliveryLocation">
-                    <option value="">Select your location</option>
-                    <option value="downtown">Downtown</option>
-                    <option value="suburb">Suburb</option>
-                    <option value="uptown">Uptown</option>
-                </select>
-            </div>
-            <div class="delivery-time">
-                <i class="far fa-clock"></i>
-                <select id="deliveryTime">
-                    <option value="">Delivery Time</option>
-                    <option value="asap">As soon as possible</option>
-                    <option value="scheduled">Schedule for later</option>
-                </select>
-            </div>
-        </div>
-    </div>
-
-    <!-- Popular Categories -->
-    <div class="menu-nav">
-        <h2>Popular Categories</h2>
-        <div class="menu-categories">
-            <a href="#starters" class="menu-category ">
-                <div class="category-image">
-                    <img src="..\Img/Starters.jpeg" alt="Starters">
-                </div>
-                <span class="category-name">Starters</span>
-            </a>
-    
-            <a href="#main-course" class="menu-category">
-                <div class="category-image">
-                    <img src="..\Img/main-course.jpeg" alt="Main Course">
-                </div>
-                <span class="category-name">Main Course</span>
-            </a>
-    
-            <a href="#desserts" class="menu-category">
-                <div class="category-image">
-                    <img src="..\Img/Des.jpeg" alt="Desserts">
-                </div>
-                <span class="category-name">Desserts</span>
-            </a>
-    
-            <a href="#beverages" class="menu-category">
-                <div class="category-image">
-                    <img src="..\Img\Beverages.jpg" alt="Beverages">
-                </div>
-                <span class="category-name">Beverages</span>
-            </a>
-    
-            <a href="#pizza" class="menu-category">
-                <div class="category-image">
+    <!-- Popular Items Section -->
+    <section class="popular-items">
+        <h2 class="section-title">Popular Items</h2>
+        <div class="items-grid">
+            <div class="item-card">
+                <div class="item-image">
                     <img src="../Img/pizza.jpg" alt="Pizza">
                 </div>
-                <span class="category-name">Pizza</span>
-            </a>
-
-            <a href="#burgers" class="menu-category ">
-                <div class="category-image">
-                    <img src="../Img/cheese burger.jpg" alt="Burgers">
+                <div class="item-info">
+                    <h3 class="item-title">Margherita Pizza</h3>
+                    <p>Fresh tomatoes, mozzarella, basil, and olive oil</p>
+                    <p class="item-price">$12.99</p>
+                    <a href="#" class="order-btn">Add to Cart</a>
                 </div>
-                <span class="category-name">Burgers</span>
-            </a>
-
-            <a href="#sandwiches" class="menu-category">
-                <div class="category-image">
-                    <img src="../Img/sandwiches.jpeg" alt="Sandwiches">
+            </div>
+            <div class="item-card">
+                <div class="item-image">
+                    <img src="../Img/cheese burger.jpg" alt="Cheese Burger">
                 </div>
-                <span class="category-name">Sandwiches</span>
-            </a>
+                <div class="item-info">
+                    <h3 class="item-title">Cheese Burger</h3>
+                    <p>Classic cheeseburger with a juicy beef patty, melted cheese, and fresh lettuce</p>
+                    <p class="item-price">$8.99</p>
+                    <a href="#" class="order-btn">Add to Cart</a>
+                </div>
+            </div>
+            <div class="item-card">
+                <div class="item-image">
+                    <img src="../Img/grilled cheese.jpg" alt="Grilled Cheese">
+                </div>
+                <div class="item-info">
+                    <h3 class="item-title">Grilled Cheese</h3>
+                    <p>Classic grilled sandwich with melted cheddar and mozzarella</p>
+                    <p class="item-price">$7.99</p>
+                    <a href="#" class="order-btn">Add to Cart</a>
+                </div>
+            </div>
+            <div class="item-card">
+                <div class="item-image">
+                    <img src="../Img/philly-cheese.jpg" alt="Philly Cheesesteak">
+                </div>
+                <div class="item-info">
+                    <h3 class="item-title">Philly Cheesesteak</h3>
+                    <p>Sliced beef with melted cheese, peppers, and onions</p>
+                    <p class="item-price">$11.99</p>
+                    <a href="#" class="order-btn">Add to Cart</a>
+                </div>
+            </div>
+            <div class="item-card">
+                <div class="item-image">
+                    <img src="../Img/french-fries.jpg" alt="French Fries">
+                </div>
+                <div class="item-info">
+                    <h3 class="item-title">French Fries</h3>
+                    <p>Crispy golden fries served with ketchup</p>
+                    <p class="item-price">$4.99</p>
+                    <a href="#" class="order-btn">Add to Cart</a>
+                </div>
+            </div>
+            <div class="item-card">
+                <div class="item-image">
+                    <img src="../Img/onion-rings.jpg" alt="Onion Rings">
+                </div>
+                <div class="item-info">
+                    <h3 class="item-title">Onion Rings</h3>
+                    <p>Crispy battered onion rings with dipping sauce</p>
+                    <p class="item-price">$5.99</p>
+                    <a href="#" class="order-btn">Add to Cart</a>
+                </div>
+            </div>
+            <div class="item-card">
+                <div class="item-image">
+                    <img src="../Img/garlic-bread.jpg" alt="Garlic Bread">
+                </div>
+                <div class="item-info">
+                    <h3 class="item-title">Garlic Bread</h3>
+                    <p>Toasted bread with garlic butter and herbs</p>
+                    <p class="item-price">$7.99</p>
+                    <a href="#" class="order-btn">Add to Cart</a>
+                </div>
+            </div>
 
-            <a href="#pasta" class="menu-category">
-                <div class="category-image">
+            <div class="item-card">
+                <div class="item-image">
+                    <img src="../Img/mozzzarella sticks.jpg" alt="Mozzarella Sticks">
+                </div>
+                <div class="item-info">
+                    <h3 class="item-title">Mozzarella Sticks</h3>
+                    <p>Breaded mozzarella with marinara sauce</p>
+                    <p class="item-price">$6.99</p>
+                    <a href="#" class="order-btn">Add to Cart</a>
+                </div>
+            </div>
+            <div class="item-card">
+                <div class="item-image">
+                    <img src="../Img/chicken-wings.jpg" alt="Chicken Wings">
+                </div>
+                <div class="item-info">
+                    <h3 class="item-title">Chicken Wings</h3>
+                    <p>Crispy wings with choice of sauce</p>
+                    <p class="item-price">$10.99</p>
+                    <a href="#" class="order-btn">Add to Cart</a>
+                </div>
+            </div>
+            <div class="item-card">
+                <div class="item-image">
+                    <img src="../Img/dessert.jpg" alt="Burger">
+                </div>
+                <div class="item-info">
+                    <h3 class="item-title">Chocolate Cake</h3>
+                    <p>Rich chocolate layer cake with frosting</p>
+                    <p class="item-price">$6.99</p>
+                    <a href="#" class="order-btn">Add to Cart</a>
+                </div>
+            </div>
+            <div class="item-card">
+                <div class="item-image">
+                    <img src="../Img/potato wedges.jpg" alt="potato wedges">
+                </div>
+                <div class="item-info">
+                    <h3 class="item-title">Potato Wedges</h3>
+                    <p>Crispy potato wedges with a side of dipping sauce</p>
+                    <p class="item-price">$5.99</p>
+                    <a href="#" class="order-btn">Add to Cart</a>
+                </div>
+            </div>
+            <div class="item-card">
+                <div class="item-image">
                     <img src="../Img/pasta.jpg" alt="Pasta">
                 </div>
-                <span class="category-name">Pasta</span>
-            </a>
-
-            <a href="#chinese" class="menu-category">
-                <div class="category-image">
-                    <img src="../Img/chinese.jpeg" alt="Chinese">
-                </div>
-                <span class="category-name">Chinese</span>
-            </a>
-
-            <a href="#soups" class="menu-category">
-                <div class="category-image">
-                    <img src="../Img/soups.jpg" alt="Soups">
-                </div>
-                <span class="category-name">Soups</span>
-            </a>
-
-            <a href="#salads" class="menu-category">
-                <div class="category-image">
-                    <img src="../Img/salad.jpg" alt="Salads">
-                </div>
-                <span class="category-name">Salads</span>
-            </a>
-
-            <a href="#mexican" class="menu-category">
-                <div class="category-image">
-                    <img src="../Img/mexican.jpg" alt="Mexican">
-                </div>
-                <span class="category-name">Mexican</span>
-            </a>
-            
-            <a href="#sushi" class="menu-category">
-                <div class="category-image">
-                    <img src="../Img/sushi.jpeg" alt="Sushi">
-                </div>
-                <span class="category-name">Sushi</span>
-            </a>
-
-            <a href="#specials" class="menu-category">
-                <div class="category-image">
-                    <img src="..\Img/Special.jpg" alt="Specials">
-                </div>
-                <span class="category-name">Specials</span>
-            </a>
-        </div>
-        <div class="category-nav">
-            <button class="nav-btn prev"><i class="fas fa-chevron-left"></i></button>
-            <button class="nav-btn next"><i class="fas fa-chevron-right"></i></button>
-        </div>
-    </div>
-
-    <!-- Featured Items -->
-    <section class="featured-items">
-        <h2>Featured Items</h2>
-        <div class="featured-grid">
-            <div class="featured-item">
-                <div class="badge">New</div>
-                <img src="../Img/featured1.jpg" alt="Featured 1">
-                <h3>Special Pizza</h3>
-                <p>From $12.99</p>
-                <button class="order-now">Order Now</button>
-            </div>
-            <!-- Add more featured items -->
-        </div>
-    </section>
-
-    <!-- Special Offers -->
-    <section class="special-offers">
-        <h2>Special Offers</h2>
-        <div class="offers-container">
-            <div class="offer-card">
-                <img src="../Img/offer1.jpg" alt="Special Offer">
-                <div class="offer-content">
-                    <h3>50% OFF</h3>
-                    <p>On your first order</p>
-                    <div class="countdown" data-expires="2024-12-31">Ends in: 00:00:00</div>
-                    <button class="claim-btn">Claim Offer</button>
+                <div class="item-info">
+                    <h3 class="item-title">Pasta Alfredo</h3>
+                    <p>Creamy Alfredo sauce with fettuccine pasta</p>
+                    <p class="item-price">$10.99</p>
+                    <a href="#" class="order-btn">Add to Cart</a>
                 </div>
             </div>
-            <!-- Add more offer cards -->
-        </div>
-    </section>
-
-    <!-- App Download Section -->
-    <section class="app-download">
-        <div class="app-content">
-            <h2>Download Our App</h2>
-            <p>Get exclusive offers and faster delivery</p>
-            <div class="app-buttons">
-                <a href="#" class="app-btn">
-                    <i class="fab fa-google-play"></i>
-                    Get it on Play Store
-                </a>
-                <a href="#" class="app-btn">
-                    <i class="fab fa-apple"></i>
-                    Download on App Store
-                </a>
-            </div>
-        </div>
-        <div class="app-image">
-            <img src="../Img/app-mockup.png" alt="Mobile App">
-        </div>
-    </section>
-
-    <!-- Newsletter Section -->
-    <section class="newsletter">
-        <div class="newsletter-content">
-            <h2>Subscribe to Our Newsletter</h2>
-            <p>Get updates about new dishes and upcoming offers</p>
-            <form class="newsletter-form">
-                <input type="email" placeholder="Enter your email" required>
-                <button type="submit">Subscribe</button>
-            </form>
         </div>
     </section>
 
@@ -548,7 +585,94 @@ body {
             <p>&copy; 2024 TastyBites. All rights reserved.</p>
         </div>
     </footer>
-    
-    <script src="../JS/script.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Mobile Navigation Toggle
+            const navbar = document.querySelector('.navbar');
+            let lastScroll = 0;
+
+            window.addEventListener('scroll', () => {
+                const currentScroll = window.pageYOffset;
+
+                if (currentScroll > lastScroll && currentScroll > 100) {
+                    navbar.style.transform = 'translateY(-100%)';
+                } else {
+                    navbar.style.transform = 'translateY(0)';
+                }
+                lastScroll = currentScroll;
+            });
+
+            // Cart Counter
+            function updateCartCount() {
+                const cartCount = document.querySelector('.cart-count');
+                const cart = JSON.parse(localStorage.getItem('cart')) || [];
+                const count = cart.reduce((total, item) => total + item.quantity, 0);
+                cartCount.textContent = count;
+            }
+
+            // Add to Cart Functionality
+            const addToCartButtons = document.querySelectorAll('.order-btn');
+            addToCartButtons.forEach(button => {
+                button.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const card = this.closest('.item-card');
+                    const item = {
+                        name: card.querySelector('.item-title').textContent,
+                        price: card.querySelector('.item-price').textContent,
+                        quantity: 1
+                    };
+
+                    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+                    const existingItem = cart.find(i => i.name === item.name);
+
+                    if (existingItem) {
+                        existingItem.quantity += 1;
+                    } else {
+                        cart.push(item);
+                    }
+
+                    localStorage.setItem('cart', JSON.stringify(cart));
+                    updateCartCount();
+
+                    // Show confirmation
+                    showNotification('Item added to cart!');
+                });
+            });
+
+            // Notification Function
+            function showNotification(message) {
+                const notification = document.createElement('div');
+                notification.className = 'notification';
+                notification.textContent = message;
+                document.body.appendChild(notification);
+
+                setTimeout(() => {
+                    notification.remove();
+                }, 2000);
+            }
+
+            // Initialize cart count
+            updateCartCount();
+
+            // Animate elements on scroll
+            function animateOnScroll() {
+                const elements = document.querySelectorAll('.feature-card, .item-card');
+                elements.forEach(element => {
+                    const elementTop = element.getBoundingClientRect().top;
+                    const windowHeight = window.innerHeight;
+
+                    if (elementTop < windowHeight - 50) {
+                        element.style.opacity = '1';
+                        element.style.transform = 'translateY(0)';
+                    }
+                });
+            }
+
+            window.addEventListener('scroll', animateOnScroll);
+            animateOnScroll(); // Initial check
+        });
+    </script>
 </body>
+
 </html>
