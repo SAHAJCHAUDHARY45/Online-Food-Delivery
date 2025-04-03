@@ -457,7 +457,7 @@ html {
 /* About Page Styles */
 
 .about-hero {
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../Img/about-hero.jpg');
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../Img/Happy-customers.jpg');
     background-size: cover;
     background-position: center;
     height: 400px;
