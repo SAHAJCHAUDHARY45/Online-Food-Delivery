@@ -113,12 +113,6 @@
     background: rgba(255, 71, 87, 0.1);
 }
 
-.signup-btn {
-    background: #ff4757;
-    color: white;
-    border: 1px solid #ff4757;
-} */
-
 .signup-btn:hover {
     background: #ff6b81;
     border-color: #ff6b81;
@@ -412,46 +406,64 @@ html {
 
 .menu-items {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 20px;
-    padding: 20px 0;
+    padding: 20px;
 }
 
 .menu-item {
-    border: 1px solid #ddd;
-    padding: 15px;
-    border-radius: 8px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
     text-align: center;
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 .menu-item img {
     width: 100%;
     height: 200px;
     object-fit: cover;
-    border-radius: 4px;
+    border-radius: 8px;
+    margin-bottom: 15px;
 }
 
 .menu-item h3 {
     margin: 10px 0;
+    color: #333;
+    font-size: 1.2rem;
 }
 
-.price {
-    display: block;
+.menu-item p {
+    color: #666;
+    margin-bottom: 15px;
+    flex-grow: 1;
+}
+
+.menu-item .price {
+    font-size: 1.2rem;
+    color: #ff6b6b;
     font-weight: bold;
     margin: 10px 0;
 }
 
-.add-to-cart {
-    background-color: #ff4757;
+.menu-item .add-to-cart {
+    background: #ff6b6b;
     color: white;
     border: none;
-    padding: 8px 16px;
-    border-radius: 4px;
+    padding: 10px 20px;
+    border-radius: 5px;
     cursor: pointer;
+    transition: background 0.3s ease;
+    width: 100%;
+    margin-top: auto;
 }
 
-.add-to-cart:hover {
-    background-color: #ff3057;
+.menu-item .add-to-cart:hover {
+    background: #ff5252;
 }
 
 /* About Page Styles */
